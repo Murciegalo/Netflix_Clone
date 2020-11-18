@@ -1,1 +1,6 @@
-"# Netflix_Clone" 
+# Netflix_Clone #
+
+# TECH #
+
+- ReactJS
+- Firebase
