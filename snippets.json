@@ -1,0 +1,7 @@
+{
+  "html":{
+    "snippets": {
+      "list": "ul>li.test*4"
+    }
+  }
+}
