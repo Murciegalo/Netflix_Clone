@@ -1,11 +1,9 @@
+import Jumbotron from "./components/jumbotron";
 
-
-function App() {
+export default function App() {
   return (
     <div className="App">
-      hello
+      <Jumbotron />
     </div>
   );
 }
-
-export default App;
