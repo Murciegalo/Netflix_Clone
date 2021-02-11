@@ -7,10 +7,13 @@ export default function App() {
       <Jumbotron.Container>
         {jumboData.map(el => (
           <Jumbotron key={el.id} direction={el.direction}>
-            <p>{el.title}</p>
-            <p>{el.subTitle}</p>
-            <p>{el.image}</p>
-            <p>{el.alt}</p>
+            <Jumbotron.Pane>
+              <Jumbotron.Title>{el.title}</Jumbotron.Title>
+              <Jumbotron.SubTitle>{el.subTitle}</Jumbotron.SubTitle>
+            </Jumbotron.Pane>
+            <Jumbotron.Pane>
+              <Jumbotron.Image src={el.image} alt={el.alt}/>
+            </Jumbotron.Pane>
           </Jumbotron>
         ))}
       </Jumbotron.Container>
