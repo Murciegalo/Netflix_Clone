@@ -24,7 +24,9 @@ export const Inner = styled.div`
 
 export const Container = styled.div`
   @media (max-width: 1000px){
-    flex-direction: column
+    ${Item}:last-of-type h2 {
+      margin-bottom: 50px;
+    }
   }
 `
 
@@ -43,7 +45,7 @@ export const Title = styled.h1`
   margin-bottom: 8px;
 
   @media (max-width: 1000px){
-    flex-direction: column
+    font-size: 26px;
   }
 `
 export const SubTitle = styled.h2`
