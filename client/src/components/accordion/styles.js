@@ -2,46 +2,52 @@ import styled from 'styled-components/macro'
 
 
 export const Container = styled.div`
+  display: flex;
+  border-bottom: 8px solid #222;
   @media (max-width: 1000px){
   }
 `
 export const Inner = styled.div`
   display: flex;
-  align-items: center;
-  flex-direction: ${({ direction }) => direction};
-  justify-content: space-between;
-  max-width: 1100px;
+  padding: 70px 45px;
+  flex-direction: column;
+  max-width: 815px;
   margin: auto;
-  width: 100%;
   @media (max-width: 1000px){
-    flex-direction: column;
   }
+`
+export const Frame = styled.div`
+
 `
 
 export const Item = styled.div`
-  display: flex;
-  border-bottom: 8px solid #222;
-  padding: 50px 5%;
   color: white;
-  overflow: hidden;
-`;
+  margin-bottom: 10px;
+  
+  &:first-of-type{
+    margin-top: 3em;
+  }
+`
 
 export const Title = styled.h1`
-  font-size: 50px;
+  font-size: 15px;
+  color: white;
   line-height: 1.1;
+  margin-top: 0;
   margin-bottom: 8px;
-
-  @media (max-width: 1000px){
+  text-align: center;
+  @media (max-width: 600px){
     font-size: 26px;
   }
 `
 
 export const Header = styled.h1`
-  font-size: 50px;
-  line-height: 1.1;
-  margin-bottom: 8px;
 
   @media (max-width: 1000px){
     font-size: 26px;
   }
+`
+
+export const Body = styled.div`
+
 `

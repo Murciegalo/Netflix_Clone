@@ -1,7 +1,5 @@
-import React, {useState, createContext} from 'react'
-import { useContext } from 'react'
-import { Container } from '../footer/styles'
-import {Inner, Title, Frame, Item, Header} from './styles'
+import React, {useState, createContext, useContext} from 'react'
+import {Container, Inner, Title, Frame, Item, Header, Body} from './styles'
 
 const Context = createContext()
 export default function Accordion({children, ...restProps}) {
@@ -28,10 +26,15 @@ Accordion.Item = function AccordionItem({children, ...restProps}) {
 }
 
 Accordion.Header = function AccordionHeader({children, ...restProps}) {
-  // eslint-disable-next-line no-unused-vars
-  const {toogle, setToogle} = useContext()
-  const changer = toogle => setToogle(!toogle)
-  return <Header onClick={() => changer(toogle)} {...restProps}>
+  // const {toogle, setToogle} = useContext()
+  // const changer = toogle => setToogle(!toogle)
+  return <Header {...restProps}>
     {children}
   </Header>
+}
+
+Accordion.Body = function AccordionBody({children, ...restProps}) {
+  // const {toogle} = useContext()
+  // const body = toogle ? <Body {...restProps}>{children}</Body> : null  
+  return 'alallaa'
 }
