@@ -12,9 +12,6 @@ export const Inner = styled.div`
   width: 815px;
   margin: auto;
 `
-export const Frame = styled.div`
-
-`
 
 export const Item = styled.div`
   color: white;
