@@ -47,13 +47,11 @@ export const Header = styled.h1`
   padding: .8em 1.2em;
   user-select: none;
 
-  img {
-    filter: brightness(0) invert(1);
-    width: 24px;
-    
-    @media (max-width: 600px){
-      width: 16px;
-    }
+  svg {
+    height: 1em;
+    width: 1em;
+    fill: #fff;
+    transform: translateY(-12%) rotate(-45deg);
   }
   @media (max-width: 600px){
     font-size: 16px;

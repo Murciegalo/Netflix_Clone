@@ -24,8 +24,16 @@ Accordion.Item = function AccordionItem({children, ...restProps}) {
 Accordion.Header = function AccordionHeader({children, ...restProps}) {
   const {toogle, setToogle} = useContext(Context)
   const changer = toogle => setToogle(!toogle)
-  const icon = toogle ? <img src='../../images/icons/close-slim.png' alt='C'/> 
-  : <img src='../../images/icons/add.png' alt='D'/>; 
+  const icon = toogle ? <svg id="thin-x" viewBox="0 0 26 26" focusable="true">
+    <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 
+    1.8 20.5 10.5 11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5
+    1.8 19.3 0.5 10.5 9.3Z"></path>
+  </svg>
+  : <svg id="thin-x" viewBox="0 0 26 26" focusable="true">
+  <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 
+  1.8 20.5 10.5 11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5 
+  1.8 19.3 0.5 10.5 9.3Z"></path>
+  </svg> 
   
   return <Header {...restProps} onClick={() => changer(toogle)}>
     {children}
