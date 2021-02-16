@@ -23,11 +23,11 @@ export const Item = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 15px;
-  color: white;
+  font-size: 50px;
   line-height: 1.1;
-  margin-top: 0;
   margin-bottom: 8px;
+  color: white;
+  margin-top: 0;
   text-align: center;
 
   @media (max-width: 600px){
