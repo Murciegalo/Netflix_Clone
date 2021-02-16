@@ -35,17 +35,27 @@ export const Btn = styled.button`
   border-left: 1px solid #333;
   cursor: pointer;
 
-  svg{
+  svg {
     height: 1em;
     width: 1em;
     path{
       fill: #fff;
     }
   }
-  
   &:hover {
     background: #f40612;
     box-shadow: 0 1px 0 rgba(0,0,0,.45);
+  }
+  @media (max-width: 1000px){
+    margin-top: .5em;
+    border-radius: 2%;
+  }
+  @media (max-width: 600px){
+    font-size: 16px;
+    height: 40px;
+    padding: 10px 20px;
+    margin-top: 1em;
+    border-radius: 2%;
   }
 `
 
@@ -53,7 +63,6 @@ export const Text = styled.h3`
   max-width: none;
   padding-bottom: 20px;
   font-size: 1.2rem;
-  // padding: 0 5%;
   color: white;
   margin: 0 auto;
   font-weight: 400;
