@@ -24,7 +24,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.h2`
   font-size: 1.625rem;
   color: white;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   max-width: 640px;
   font-weight: normal;
   

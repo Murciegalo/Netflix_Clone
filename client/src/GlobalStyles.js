@@ -4,6 +4,7 @@ const GlobalStyles = createGlobalStyle`
   html, body {
     box-sizing: border-box;
     margin: 0;
+    height: 100%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

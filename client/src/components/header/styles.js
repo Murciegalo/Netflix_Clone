@@ -4,8 +4,17 @@ import {Link as ReactLink} from 'react-router-dom'
 export const BackGround = styled.div`
   display: flex;
   flex-direction: column;
-  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/399d6794-b770-4b21-992d-a3326710a170/2cd9a2c3-4d52-46dd-99c9-8d77b65625a9/BR-en-20210215-popsignuptwoweeks-perspective_alpha_website_large.jpg) 
-  no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/399d6794-b770-4b21-992d-a3326710a170/2cd9a2c3-4d52-46dd-99c9-8d77b65625a9/BR-en-20210215-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+   @media (max-width: 600px){
+    height: 520px;
+  }
 `;
 export const Container = styled.div`
   display: flex;

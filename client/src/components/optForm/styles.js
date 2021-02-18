@@ -4,9 +4,8 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  height: 100%;
   width: 815px;
-  margin: 3em auto;
+  margin: 1em auto;
   flex-wrap: wrap;
 
   @media (max-width: 1000px){

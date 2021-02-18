@@ -12,8 +12,8 @@ export default function Home() {
       <Hero>
         <Hero.Title>Unlimited movies, TV shows, and more.</Hero.Title>
         <Hero.SubTitle>Watch anywhere. Cancel anytime.</Hero.SubTitle>
+        <OptFormCont />
       </Hero>
-      <OptFormCont />
     </HeaderCont>
     <JumboTronCont />
     <AccordionCont />
