@@ -1,7 +1,7 @@
 import React from 'react'
 import Accordion from './Accordion'
 import faqs from '../../featured/faqs.json'
-import OptForm from '../optForm/OptForm'
+import OptFormCont from '../optForm/OptFormCont'
 
 export default function AccordionCont() {
   return (
@@ -13,11 +13,7 @@ export default function AccordionCont() {
             <Accordion.Body>{el.body}</Accordion.Body>
         </Accordion.Item>
       ))}
-      <OptForm>
-        <OptForm.Text>Ready to watch? Enter your email to create or restart your membership</OptForm.Text>
-        <OptForm.Input placeholder='Email Address'/>
-        <OptForm.Btn>Get Started</OptForm.Btn>
-      </OptForm>
+      <OptFormCont />
     </Accordion>
   )
 }
