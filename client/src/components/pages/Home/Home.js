@@ -1,12 +1,15 @@
 import React from 'react'
+import HeaderCont from '../../header/HeaderCont'
+import JumboTronCont from '../../jumbotron/JumboTronCont'
 import AccordionCont from '../../accordion/AccordionCont'
 import FooterCont from '../../footer/FooterCont'
-import JumboTronCont from '../../jumbotron/JumboTronCont'
 
 export default function Home() {
   return <>
-    <JumboTronCont />
-    <AccordionCont />
-    <FooterCont />
+    <HeaderCont>
+      <JumboTronCont />
+      <AccordionCont />
+      <FooterCont />
+    </HeaderCont>
   </>
 }

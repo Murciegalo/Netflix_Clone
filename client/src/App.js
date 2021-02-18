@@ -1,7 +1,4 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import AccordionCont from "./components/accordion/AccordionCont";
-import FooterCont from "./components/footer/FooterCont";
-import JumbotronContainer from "./components/jumbotron/JumboTronCont";
 import Browse from './components/pages/Browse/Browse';
 import Home from './components/pages/Home/Home';
 import SignIn from './components/pages/SignIn/SignIn';
