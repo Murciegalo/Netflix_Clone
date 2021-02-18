@@ -1,8 +1,12 @@
 import React from 'react'
-import { Container, Input, Btn, Text } from './styles'
+import { Container, Text, Input, Btn } from './styles'
 
 export default function OptForm({children, ...restProps}) {
   return <Container {...restProps}>{children}</Container>
+}
+
+OptForm.Text = function OptFormText({children, ...restProps}) {
+  return <Text {...restProps}>{children}</Text>
 }
 
 OptForm.Input = function OptFormInput({...restProps}) {
@@ -20,8 +24,4 @@ OptForm.Btn = function OptFormBtn({children, ...restProps}) {
       ></path>
     </svg>
   </Btn>
-}
-
-OptForm.Text = function OptFormText({children, ...restProps}) {
-  return <Text {...restProps}>{children}</Text>
 }

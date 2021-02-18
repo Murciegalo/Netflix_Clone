@@ -6,15 +6,32 @@ export const Container = styled.div`
   justify-content: center;
   height: 100%;
   width: 815px;
-  margin-top: 3em;
+  margin: 3em auto;
   flex-wrap: wrap;
 
   @media (max-width: 1000px){
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    text-align: center;
   }
 
 `
+
+export const Text = styled.h3`
+  max-width: none;
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+  color: white;
+  margin: 0 auto;
+  font-weight: 400;
+  
+  @media (max-width: 600px){
+    font-size: 1.325rem;
+    padding: 10px 18px;
+  }
+`
+
 export const Input = styled.input`
   max-width: 450px;
   width: 100%;
@@ -22,6 +39,10 @@ export const Input = styled.input`
   padding: 10px;
   height: 70px;
   box-sizing: border-box;
+  
+  @media (max-width: 600px){
+    height: 50px;
+  }
 `
 
 export const Btn = styled.button`
@@ -60,15 +81,5 @@ export const Btn = styled.button`
   }
 `
 
-export const Text = styled.h3`
-  max-width: none;
-  padding-bottom: 20px;
-  font-size: 1.2rem;
-  color: white;
-  margin: 0 auto;
-  font-weight: 400;
-  @media (max-width: 600px){
-    font-size: 26px;
-  }
-`
+
 
