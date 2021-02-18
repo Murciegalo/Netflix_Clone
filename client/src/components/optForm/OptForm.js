@@ -16,7 +16,7 @@ OptForm.Btn = function OptFormBtn({children, ...restProps}) {
       <desc>chevron</desc>
       <path d="M.61 1.312l.78-.624L5.64 6l-4.25 5.312-.78-.624L4.36 6z" 
       fill="none" 
-      fill-rule="evenodd"
+      fillRule="evenodd"
       ></path>
     </svg>
   </Btn>
