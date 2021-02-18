@@ -17,7 +17,7 @@ Header.Frame = function HeaderFrame({children, ...restProps}) {
 
 Header.Logo = function HeaderLogo({to, ...restProps}) {
   return <Link to={to}>
-    <Logo {...restProps}/>
+    <Logo {...restProps} />
   </Link>
 }
 

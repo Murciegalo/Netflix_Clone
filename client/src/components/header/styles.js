@@ -2,21 +2,24 @@ import styled from 'styled-components/macro'
 import {Link as ReactLink} from 'react-router-dom'
 
 export const BackGround = styled.div`
-  display: flex;
-  padding: 70px 56px;
-  margin: auto;
-  max-width: 1000px;
-  flex-direction: column;
+
 `;
 
 export const Container = styled.div`
   display: flex;
-  padding: 70px 56px;
-  margin: auto;
+  justify-content: space-between;
+  padding-top: 20px;
 `;
 
 export const Logo = styled.img`
-  display: flex;
+  height: 32px;
+  width: 112px;
+  margin-left: 45px;
+
+  @media (min-width: 1449px){
+    height: 45px;
+    width: 167px;
+  }
 `;
 
 export const Btn = styled(ReactLink)`

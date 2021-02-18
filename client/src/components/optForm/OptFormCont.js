@@ -3,8 +3,7 @@ import OptForm from './OptForm'
 
 export default function OptFormCont() {
   return (
-    <OptForm>
-      
+    <OptForm>    
     </OptForm>
   )
 }
