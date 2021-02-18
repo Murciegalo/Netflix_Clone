@@ -7,9 +7,10 @@ import FooterCont from '../../footer/FooterCont'
 export default function Home() {
   return <>
     <HeaderCont>
-      <JumboTronCont />
-      <AccordionCont />
-      <FooterCont />
+      <p>HELLO</p>
     </HeaderCont>
+    <JumboTronCont />
+    <AccordionCont />
+    <FooterCont />
   </>
 }

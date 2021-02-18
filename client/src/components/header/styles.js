@@ -2,19 +2,26 @@ import styled from 'styled-components/macro'
 import {Link as ReactLink} from 'react-router-dom'
 
 export const BackGround = styled.div`
-
+  display: flex;
+  flex-direction: column;
+  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/399d6794-b770-4b21-992d-a3326710a170/2cd9a2c3-4d52-46dd-99c9-8d77b65625a9/BR-en-20210215-popsignuptwoweeks-perspective_alpha_website_large.jpg) 
+  no-repeat;
 `;
-
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 46px;
+
+  @media (max-width: 1000px){
+    margin: 0 30px;
+  }
 `;
 
 export const Logo = styled.img`
   height: 32px;
   width: 112px;
-  margin-left: 45px;
 
   @media (min-width: 1449px){
     height: 45px;
