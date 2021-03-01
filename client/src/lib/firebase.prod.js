@@ -7,6 +7,7 @@ import {seedDatabase} from '../seed'
 const config = {
   apiKey: "AIzaSyD-LhwQ8RgCZuyF97WWtCn2LZQGK2MqaQo",
   authDomain: "netflx-d1bb7.firebaseapp.com",
+  databaseURL: "https://netflx-d1bb7.firebaseio.com",
   projectId: "netflx-d1bb7",
   storageBucket: "netflx-d1bb7.appspot.com",
   messagingSenderId: "424277922354",
@@ -15,6 +16,6 @@ const config = {
 
 const firebase = Firebase.initializeApp(config);
 
-seedDatabase(firebase)
+// seedDatabase(firebase)
 
 export { firebase }

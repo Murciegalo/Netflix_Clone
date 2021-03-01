@@ -4,8 +4,6 @@ import Home from './components/pages/Home/Home';
 import SignIn from './components/pages/SignIn/SignIn';
 import SignUp from './components/pages/SignUp/SignUp';
 import * as Routes from './routes/constants'
-import {firebase} from './lib/firebase.prod'
-firebase()
 
 export default function App() {
   return <Router>
