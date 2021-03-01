@@ -41,6 +41,7 @@ export const Input = styled.input`
   
   @media (max-width: 600px){
     height: 50px;
+    width: 80%;
   }
 `
 
