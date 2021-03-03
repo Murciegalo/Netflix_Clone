@@ -4,9 +4,9 @@ import Form from '../../form/Form'
 import HeaderCont from '../../header/HeaderCont'
 
 export default function SignIn() {
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
-  const [error, setError] = useState(null)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
   const errorDisplay = error && <Form.Error>{error}</Form.Error>
   
   // BASIC form validations

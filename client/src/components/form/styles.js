@@ -21,7 +21,6 @@ export const Error = styled.h2`
   margin: 0 0 16px;
   color: white;
   padding: 15px 20px;
-
 `;
 
 export const Base = styled.form`
