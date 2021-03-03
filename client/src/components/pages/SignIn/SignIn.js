@@ -20,7 +20,6 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('test');
     try {
       const user = await firebase.auth().signInWithEmailAndPassword(email, password)
       if(user){

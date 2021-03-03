@@ -21,7 +21,6 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('test');
     try {
       const signUp = await firebase.auth().createUserWithEmailAndPassword(email, password)
       await signUp.updateProfile({
