@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   min-height: 500px;
   max-width: 320px;
-  background-color: rgba(0, 0, 0, .75);
+  background-color: rgba(0, 0, 0, .5);
   border-radius: 5px;
   width: 100%;
   margin: auto;
@@ -24,7 +24,8 @@ export const Error = styled.h2`
 `;
 
 export const Base = styled.form`
-  
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.h2`
@@ -60,7 +61,7 @@ export const Input = styled.input`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
-  padding: 15px 25px;
+  padding: 16px 25px;
   width: 85%;
   color: #8c8c8c;
   font-size: 16px;
