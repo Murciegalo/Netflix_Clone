@@ -6,8 +6,8 @@ import {firebase} from './lib/firebase.prod.js'
 import {FirebaseCntx} from './context/firebase'
 
 render( <>
+  <GlobalStyles/>
   <FirebaseCntx.Provider value={{firebase}}>
-    <GlobalStyles/>
     <App />
   </FirebaseCntx.Provider>
 </>,  

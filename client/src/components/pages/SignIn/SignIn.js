@@ -1,19 +1,37 @@
-import React, {useState} from 'react'
-import FooterCont from '../../footer/FooterCont'
-import Form from '../../form/Form'
+import React, {useState, useContext} from 'react'
+import {FirebaseCntx} from '../../../context/firebase'
+import {useHistory} from 'react-router-dom'
 import HeaderCont from '../../header/HeaderCont'
-
+import Form from '../../form/Form'
+import FooterCont from '../../footer/FooterCont'
+import * as Routes from '../../../routes/constants'
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const errorDisplay = error && <Form.Error>{error}</Form.Error>
   
+  const { firebase } = useContext(FirebaseCntx)
+
+  const {history} = useHistory()
   // BASIC form validations
   const isInvalid = password === '' || email === ''
-  console.log(isInvalid);
-  const handleSubmit = () => {
-    console.log('submit');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log('test');
+    try {
+      const user = await firebase.auth().signInWithEmailAndPassword(email, password)
+      if(user){
+        history.push(Routes.BROWSE)
+      }
+    } 
+    catch (err) {
+      setError(err.message)
+      setEmail('')
+      setPassword('')
+      setTimeout(() => setError(''), 2000)
+    }
   }
 
   return <>
@@ -21,7 +39,7 @@ export default function SignIn() {
       <Form>
         <Form.Title>Sign In</Form.Title>
         {errorDisplay}
-        <Form.Base onSubmit={handleSubmit} method='POST'>
+        <Form.Base>
           <Form.Input
             placeholder = 'Email address'
             value = {email}
@@ -34,7 +52,12 @@ export default function SignIn() {
             value = {password}
             onChange = {({target}) => setPassword(target.value)}
           />
-          <Form.Submit disabled={isInvalid}>Sign In</Form.Submit>
+          <Form.Submit 
+            disabled={isInvalid}
+            onClick = {handleSubmit}
+          >
+            Sign In
+          </Form.Submit>
         </Form.Base>
         <Form.Text>
           New to Netflix? <Form.Link to='signUp'>Sign up now.</Form.Link>
