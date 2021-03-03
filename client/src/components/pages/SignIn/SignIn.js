@@ -68,7 +68,7 @@ export default function SignIn() {
           <Form.LinkII to='#'>Learn More</Form.LinkII>
         </Form.SmallText>
       </Form>
-    </HeaderCont>
     <FooterCont />
+    </HeaderCont>
   </>
 }
