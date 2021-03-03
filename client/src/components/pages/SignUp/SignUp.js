@@ -7,7 +7,7 @@ import FooterCont from '../../footer/FooterCont'
 import * as Routes from '../../../routes/constants'
 
 export default function SignUp() {
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -23,13 +23,16 @@ export default function SignUp() {
     e.preventDefault()
     console.log('test');
     try {
-      const user = await firebase.auth().signInWithEmailAndPassword(email, password)
-      if(user){
-        history.push(Routes.BROWSE)
-      }
+      const signUp = await firebase.auth().createUserWithEmailAndPassword(email, password)
+      await signUp.updateProfile({
+        displayName: firstName,
+        photoURL: Math.floor(Math.random() * 5) + 1,
+      })
+      history.push(Routes.BROWSE)
     } 
     catch (err) {
       setError(err.message)
+      setFirstName('')
       setEmail('')
       setPassword('')
       setTimeout(() => setError(''), 2000)
@@ -44,8 +47,8 @@ export default function SignUp() {
         <Form.Base>
           <Form.Input
             placeholder = 'Firstname'
-            value = {name}
-            onChange = {({target}) => setName(target.value)}
+            value = {firstName}
+            onChange = {({target}) => setFirstName(target.value)}
           />
           <Form.Input
             placeholder = 'Email address'
@@ -63,7 +66,7 @@ export default function SignUp() {
             disabled={isInvalid}
             onClick = {handleSubmit}
           >
-            Sign In
+            Sign Up
           </Form.Submit>
         </Form.Base>
         <Form.Text>
