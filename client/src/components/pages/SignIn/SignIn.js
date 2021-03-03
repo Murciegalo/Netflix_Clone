@@ -11,7 +11,7 @@ export default function SignIn() {
   
   // BASIC form validations
   const isInvalid = password === '' || email === ''
-
+  console.log(isInvalid);
   const handleSubmit = () => {
     console.log('submit');
   }
@@ -36,6 +36,14 @@ export default function SignIn() {
           />
           <Form.Submit disabled={isInvalid}>Sign In</Form.Submit>
         </Form.Base>
+        <Form.Text>
+          New to Netflix? <Form.Link to='signUp'>Sign up now.</Form.Link>
+        </Form.Text>
+        <Form.SmallText>
+          This page is protected by Google reCAPTCHA to ensure you're not a bot.
+          <span> </span> 
+          <Form.LinkII to='#'>Learn More</Form.LinkII>
+        </Form.SmallText>
       </Form>
     </HeaderCont>
     <FooterCont />

@@ -6,6 +6,7 @@ import { Container,
   Text,
   SmallText,
   Link,
+  LinkII,
   Input,
   Submit
 } from './styles'
@@ -52,6 +53,11 @@ Form.Link = function FormLink({children, ...restProps}) {
   return <Link {...restProps}>
     {children}
   </Link>
+}
+Form.LinkII = function FormLinkII({children, ...restProps}) {
+  return <LinkII {...restProps}>
+    {children}
+  </LinkII>
 }
 
 Form.Input = function FormInput({children, ...restProps}) {
