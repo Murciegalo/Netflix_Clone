@@ -5,16 +5,17 @@ import HeaderCont from '../../header/HeaderCont'
 import Form from '../../form/Form'
 import FooterCont from '../../footer/FooterCont'
 import * as Routes from '../../../routes/constants'
+
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const errorDisplay = error && <Form.Error>{error}</Form.Error>
   
   const { firebase } = useContext(FirebaseCntx)
-
   const {history} = useHistory()
-  // BASIC form validations
+  
+  const errorDisplay = error && <Form.Error>{error}</Form.Error>
+  // BASIC validations
   const isInvalid = password === '' || email === ''
 
   const handleSubmit = async (e) => {
