@@ -12,12 +12,11 @@ export default function SignIn() {
   // BASIC form validations
   const isInvalid = password === '' || email === ''
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    
+  const handleSubmit = () => {
+    console.log('submit');
   }
 
-  return <Form.Error>
+  return <>
     <HeaderCont>
       <Form>
         <Form.Title>Sign In</Form.Title>
@@ -40,5 +39,5 @@ export default function SignIn() {
       </Form>
     </HeaderCont>
     <FooterCont />
-  </Form.Error>
+  </>
 }

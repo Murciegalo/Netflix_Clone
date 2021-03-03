@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container,
-  Error,
   Base,
   Title,
   Text,
@@ -16,12 +15,6 @@ export default function Form({ children, ...restProps}) {
       {children}
     </Container>
   )
-}
-
-Form.Error = function FormError({children, ...restProps}) {
-  return <Error {...restProps}>
-    {children}
-  </Error>
 }
 
 Form.Base = function FormBase({children, ...restProps}) {
