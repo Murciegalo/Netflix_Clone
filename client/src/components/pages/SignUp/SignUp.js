@@ -13,29 +13,31 @@ export default function SignUp() {
   const [error, setError] = useState('')
   
   const { firebase } = useContext(FirebaseCntx)
-  const {history} = useHistory()
+  const history = useHistory()
   
   const errorDisplay = error && <Form.Error>{error}</Form.Error>
   // BASIC validations
   const isInvalid = password === '' || email === ''
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
-    try {
-      const signUp = await firebase.auth().createUserWithEmailAndPassword(email, password)
-      await signUp.updateProfile({
-        displayName: firstName,
-        photoURL: Math.floor(Math.random() * 5) + 1,
-      })
-      history.push(Routes.BROWSE)
-    } 
-    catch (err) {
-      setError(err.message)
-      setFirstName('')
-      setEmail('')
-      setPassword('')
-      setTimeout(() => setError(''), 2000)
-    }
+    
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then( 
+      result => result.user.updateProfile({
+          displayName: firstName,
+          photoURL: Math.floor(Math.random() * 5) + 1,
+        })
+        .then( () => history.push(Routes.BROWSE) )
+    )
+    .catch( 
+      err =>{
+        setError(err.message)
+        setFirstName('')
+        setEmail('')
+        setPassword('')
+        setTimeout(() => setError(''), 2000)
+    })
   }
 
   return <>
