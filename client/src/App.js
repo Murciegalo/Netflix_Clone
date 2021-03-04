@@ -7,21 +7,21 @@ import SignUp from './components/pages/SignUp/SignUp';
 import * as Routes from './routes/constants'
 
 export default function App() {
-  let user;
+  const user = null;
   return <Switch>
       <RedirectRoute 
         exact 
         user={user} 
-        loggedInPath={Routes.BROWSE}  
         path={Routes.SIGNIN} 
+        loggedInPath={Routes.BROWSE}  
       >
         <SignIn />
       </RedirectRoute>
       <RedirectRoute 
         exact 
         user={user} 
-        loggedInPath={Routes.BROWSE}  
         path={Routes.SIGNUP} 
+        loggedInPath={Routes.BROWSE}  
       >
         <SignUp />
       </RedirectRoute>
@@ -31,8 +31,8 @@ export default function App() {
       <RedirectRoute
         exact 
         user={user} 
-        loggedInPath={Routes.BROWSE}  
         path={Routes.HOME} 
+        loggedInPath={Routes.BROWSE}  
       >
         <Home />
       </RedirectRoute>
