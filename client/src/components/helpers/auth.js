@@ -6,11 +6,13 @@ export default function AuthRoute({user, loggedInPath, children, ...rest}) {
     <Route
       {...rest}
       render={() => {
-        return !user ? children :
-        user? <Redirect to={{pathname: loggedInPath}}/> :
-        null
+        if(!user){
+          return children 
         }
-      }
+        if(user){
+          return <Redirect to={{pathname: loggedInPath}} /> 
+        }  
+      }}
     />
   )
 }

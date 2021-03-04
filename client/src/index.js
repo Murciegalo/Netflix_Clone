@@ -4,11 +4,13 @@ import App from './App';
 import GlobalStyles from './GlobalStyles'
 import {firebase} from './lib/firebase.prod.js'
 import {FirebaseCntx} from './context/firebase'
-
+import {BrowserRouter} from 'react-router-dom'
 render( <>
   <GlobalStyles/>
   <FirebaseCntx.Provider value={{firebase}}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </FirebaseCntx.Provider>
 </>,  
 document.getElementById('root'));

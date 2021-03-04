@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import AuthRoute from './components/helpers/auth';
 import Browse from './components/pages/Browse/Browse';
 import Home from './components/pages/Home/Home';
@@ -7,10 +7,8 @@ import SignUp from './components/pages/SignUp/SignUp';
 import * as Routes from './routes/constants'
 
 export default function App() {
-  const user = {}
-
-  return <Router>
-    <Switch>
+  let user;
+  return <Switch>
       <AuthRoute 
         exact 
         path={Routes.SIGNIN} 
@@ -27,8 +25,7 @@ export default function App() {
       >
         <SignUp />
       </AuthRoute>
-      <Route exact path={Routes.BROWSE} component={Browse} />
       <Route exact path={Routes.HOME} component={Home} />
-    </Switch>      
-  </Router>
+      <Route exact path={Routes.BROWSE} component={Browse} />
+  </Switch>      
 }
