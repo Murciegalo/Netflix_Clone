@@ -1,13 +1,15 @@
 import {Switch} from 'react-router-dom'
 import {RedirectRoute, AuthRoute} from './components/helpers/auth';
+import useAuthListener from './components/hooks/use-auth-listener';
+import * as Routes from './routes/constants'
 import Browse from './components/pages/Browse/Browse';
 import Home from './components/pages/Home/Home';
 import SignIn from './components/pages/SignIn/SignIn';
 import SignUp from './components/pages/SignUp/SignUp';
-import * as Routes from './routes/constants'
 
 export default function App() {
-  const user = null;
+  const {user} = useAuthListener();
+  console.log(user, 'USER');
   return <Switch>
       <RedirectRoute 
         exact 
