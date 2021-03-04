@@ -12,7 +12,7 @@ export default function SignIn() {
   const [error, setError] = useState('')
   
   const { firebase } = useContext(FirebaseCntx)
-  const {history} = useHistory()
+  const history = useHistory()
   
   const errorDisplay = error && <Form.Error>{error}</Form.Error>
   // BASIC validations
