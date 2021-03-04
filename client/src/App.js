@@ -1,5 +1,5 @@
-import {Route, Switch} from 'react-router-dom'
-import AuthRoute from './components/helpers/auth';
+import {Switch} from 'react-router-dom'
+import {RedirectRoute, AuthRoute} from './components/helpers/auth';
 import Browse from './components/pages/Browse/Browse';
 import Home from './components/pages/Home/Home';
 import SignIn from './components/pages/SignIn/SignIn';
@@ -9,23 +9,32 @@ import * as Routes from './routes/constants'
 export default function App() {
   let user;
   return <Switch>
-      <AuthRoute 
+      <RedirectRoute 
         exact 
-        path={Routes.SIGNIN} 
         user={user} 
         loggedInPath={Routes.BROWSE}  
+        path={Routes.SIGNIN} 
       >
         <SignIn />
-      </AuthRoute>
-      <AuthRoute 
+      </RedirectRoute>
+      <RedirectRoute 
         exact 
-        path={Routes.SIGNUP} 
         user={user} 
         loggedInPath={Routes.BROWSE}  
+        path={Routes.SIGNUP} 
       >
         <SignUp />
+      </RedirectRoute>
+      <AuthRoute user={user} exact path={Routes.BROWSE}>
+        <Browse />
       </AuthRoute>
-      <Route exact path={Routes.HOME} component={Home} />
-      <Route exact path={Routes.BROWSE} component={Browse} />
+      <RedirectRoute
+        exact 
+        user={user} 
+        loggedInPath={Routes.BROWSE}  
+        path={Routes.HOME} 
+      >
+        <Home />
+      </RedirectRoute>
   </Switch>      
 }
