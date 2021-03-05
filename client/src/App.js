@@ -9,7 +9,6 @@ import SignUp from './components/pages/SignUp/SignUp';
 
 export default function App() {
   const {user} = useAuthListener();
-  console.log(user, 'USER');
   return <Switch>
       <RedirectRoute 
         exact 
