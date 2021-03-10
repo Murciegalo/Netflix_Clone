@@ -18,7 +18,7 @@ Profiles.List = function ProfilesList({children, ...restProps}) {
   </List>
 }
 
-Profiles.User = function ProfilesUser({to, children, ...restProps}) {
+Profiles.User = function ProfilesUser({children, ...restProps}) {
   return <User {...restProps}>{children}</User>
 }
 
@@ -26,6 +26,6 @@ Profiles.Picture = function ProfilesPicture({src, children, ...restProps}) {
   return <Picture src={src} {...restProps}/>
 }
 
-Profiles.User = function ProfilesUser({to, children, ...restProps}) {
-  return <User {...restProps}>{children}</User>
+Profiles.Name = function ProfilesName({children, ...restProps}) {
+  return <Name {...restProps}>{children}</Name>
 }
