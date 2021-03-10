@@ -5,9 +5,11 @@ import logo from '../../logo.svg'
 
 
 export default function ProfileCont({user, setProfile}) {
-  return <Header bg={false}>
+  return <>
+    <Header bg={false}>
       <Header.Frame>
         <Header.Logo to={Routes.HOME} src={logo} alt='Netflix' />
       </Header.Frame>
-  </Header>
+    </Header>
+  </>
 }
