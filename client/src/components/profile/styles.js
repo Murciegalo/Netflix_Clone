@@ -3,17 +3,14 @@ import {Link as ReactLink} from 'react-router-dom'
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  margin: 0 46px;
+  flex-direction: column;
 
   @media (max-width: 1000px){
     margin: 0 30px;
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   height: 32px;
   width: 112px;
 
@@ -33,7 +30,7 @@ export const List = styled.ul`
   }
 `;
 
-export const User = styled.h2`
+export const User = styled.p`
   height: 32px;
   width: 112px;
 
@@ -53,7 +50,7 @@ export const Picture = styled.img`
   }
 `;
 
-export const Name = styled.h3`
+export const Name = styled.li`
   height: 32px;
   width: 112px;
 
