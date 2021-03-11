@@ -5,6 +5,8 @@ import logo from '../../logo.svg'
 import Profiles from './Profiles'
 
 export default function ProfileCont({user, setProfile}) {
+  const userName = user.displayName !== null && user.displayName
+  const src = user.photoURL !== null && user.photoURL
   return <>
     <Header bg={false}>
       <Header.Frame>
@@ -16,7 +18,7 @@ export default function ProfileCont({user, setProfile}) {
       <Profiles.List>
         <Profiles.User>
           <Profiles.Picture />
-          <Profiles.Name>{user.displayName}</Profiles.Name>
+          <Profiles.Name>{userName}</Profiles.Name>
         </Profiles.User>
       </Profiles.List>
     </Profiles>
