@@ -6,8 +6,8 @@ export function RedirectRoute({user, loggedInPath, children, ...rest}) {
     <Route
       {...rest}
       render={
-        () => !user ? children : 
-        <Redirect to={{pathname: loggedInPath}} />  
+        () => user ? <Redirect to={{pathname: loggedInPath}} />
+        : children 
       }
     />
   )

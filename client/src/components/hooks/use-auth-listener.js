@@ -10,13 +10,16 @@ export default function useAuthListener() {
 
   useEffect(() => {
     const listener = firebase.auth().onAuthStateChanged(
-      authUser => authUser ? (
-        localStorage.setItem('authUser', JSON.stringify(authUser))
-        && setUser(authUser)
-      ) : (
-        localStorage.removeItem('authUser')
-        && setUser(null)
-      )
+      authUser => {
+        if(authUser) {
+          localStorage.setItem('authUser', JSON.stringify(authUser))
+          setUser(authUser)
+        } 
+        else{
+          localStorage.removeItem('authUser')
+          setUser(null)
+        }
+      }
     )
     return () => listener();
     // eslint-disable-next-line

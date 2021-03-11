@@ -22,8 +22,7 @@ export default function SignIn() {
     e.preventDefault()
     try {
       const user = await firebase.auth().signInWithEmailAndPassword(email, password)
-      console.log('LOGIN', user.user.displayName);
-      if(user !== null){
+      if(user) {
         history.push(Routes.BROWSE)
       }
     } 

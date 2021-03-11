@@ -19,7 +19,7 @@ export default function ProfileCont({user:{displayName, photoURL}, setProfile}) 
           displayName: displayName,
           photoURL: photoURL
         })}>
-          <Profiles.Picture src={photoURL}/>
+          { photoURL && <Profiles.Picture src={photoURL}/>}
           <Profiles.Name>{displayName}</Profiles.Name>
         </Profiles.User>
       </Profiles.List>
