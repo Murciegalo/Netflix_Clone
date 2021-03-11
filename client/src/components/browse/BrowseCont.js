@@ -2,6 +2,7 @@ import React, {useContext, useState, useEffect} from 'react'
 import ProfileCont from '../profile/ProfileCont'
 import {FirebaseCntx} from '../../context/firebase'
 import Loading from '../Loading/Loading.js'
+import Header from '../header/Header'
 
 export default function BrowseCont({slides}) {
   const [profile, setProfile] = useState({})
@@ -12,14 +13,19 @@ export default function BrowseCont({slides}) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 5000)
   } // eslint-disable-next-line
-  ,[user.displayName])
-  
-  const rendered = profile.displayName ?
-    loading ? <Loading src={user.photoURL} />
-    : null :
-    <ProfileCont user={user} setProfile={setProfile} />
+  ,[profile.displayName])
+  const rendered = <>{loading ? 
+    <Loading src={user.photoURL} />
+    : 
+    <Loading.ReleaseBody />}
+    <Header src='joker1'>Hello</Header>
+  </>
+
+
+  return profile.displayName ? rendered
+  : 
+  <ProfileCont user={user} setProfile={setProfile} />
   ;
-  return rendered;
 }

@@ -7,7 +7,10 @@ export const BackGround = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/399d6794-b770-4b21-992d-a3326710a170/2cd9a2c3-4d52-46dd-99c9-8d77b65625a9/BR-en-20210215-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  background: url(${({src}) => 
+    src ? `../images/misc/${src}.jpg` : 'https://assets.nflxext.com/ffe/siteui/vlv3/399d6794-b770-4b21-992d-a3326710a170/2cd9a2c3-4d52-46dd-99c9-8d77b65625a9/BR-en-20210215-popsignuptwoweeks-perspective_alpha_website_large.jpg'})
+    top left / cover no-repeat;
+    
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
