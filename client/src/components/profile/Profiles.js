@@ -22,7 +22,7 @@ Profiles.User = function ProfilesUser({children, ...restProps}) {
 
 Profiles.Picture = function ProfilesPicture({src, ...restProps}) {
   return <Picture 
-    src={src !== null ? `/images/users/${src}.png` : `/images/misc/loading.gif`} 
+    src={src ? `/images/users/${src}.png` : `/images/misc/loading.gif`} 
     {...restProps}
   />
 }
