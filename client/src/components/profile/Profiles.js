@@ -20,9 +20,9 @@ Profiles.User = function ProfilesUser({children, ...restProps}) {
   return <User {...restProps}>{children}</User>
 }
 
-Profiles.Picture = function ProfilesPicture({...restProps}) {
+Profiles.Picture = function ProfilesPicture({src, ...restProps}) {
   return <Picture 
-    src={`/images/users/${2}.png`} 
+    src={src !== null ? `/images/users/${src}.png` : `/images/users/2.png`} 
     {...restProps}
   />
 }

@@ -11,8 +11,6 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  height: 32px;
-  width: 112px;
 
   @media (min-width: 1449px){
     height: 45px;
@@ -21,8 +19,6 @@ export const Title = styled.h1`
 `;
 
 export const List = styled.ul`
-  height: 32px;
-  width: 112px;
 
   @media (min-width: 1449px){
     height: 45px;
@@ -31,9 +27,7 @@ export const List = styled.ul`
 `;
 
 export const User = styled.p`
-  height: 32px;
-  width: 112px;
-
+  
   @media (min-width: 1449px){
     height: 45px;
     width: 167px;
@@ -41,8 +35,6 @@ export const User = styled.p`
 `;
 
 export const Picture = styled.img`
-  height: 32px;
-  width: 112px;
 
   @media (min-width: 1449px){
     height: 45px;
@@ -51,9 +43,7 @@ export const Picture = styled.img`
 `;
 
 export const Name = styled.li`
-  height: 32px;
-  width: 112px;
-
+  
   @media (min-width: 1449px){
     height: 45px;
     width: 167px;

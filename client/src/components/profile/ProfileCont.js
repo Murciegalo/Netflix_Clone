@@ -17,7 +17,7 @@ export default function ProfileCont({user, setProfile}) {
       <Profiles.Title>Who's watching?</Profiles.Title>
       <Profiles.List>
         <Profiles.User>
-          <Profiles.Picture />
+          <Profiles.Picture src={src}/>
           <Profiles.Name>{userName}</Profiles.Name>
         </Profiles.User>
       </Profiles.List>
