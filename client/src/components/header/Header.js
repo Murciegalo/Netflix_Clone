@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {BackGround, Container, Feature, Logo, Text, Btn} from './styles'
+import {BackGround, Container, Feature, Logo, Text, FeaturedText, Btn} from './styles'
 
 export default function Header({bg=true, feature=false, children, ...restProps}) {
   const background = bg && !feature? <BackGround {...restProps}>
@@ -22,6 +22,15 @@ Header.Logo = function HeaderLogo({to, ...restProps}) {
 Header.Text = function HeaderText({children, ...restProps}) {
   return <Text {...restProps}>{children}</Text>
 }
+
+Header.FeaturedText = function HeaderFeaturedText({children, ...restProps}) {
+  return <FeaturedText {...restProps}>{children}</FeaturedText>
+}
+
+Header.TextLink = function HeaderTextLink({children, ...restProps}) {
+  return <Link {...restProps}>{children}</Link>
+}
+
 Header.Btn = function HeaderBtn({to, children, ...restProps}) {
   return <Btn to={to} {...restProps}>{children}</Btn>
 }

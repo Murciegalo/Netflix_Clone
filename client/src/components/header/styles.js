@@ -34,7 +34,7 @@ export const Container = styled.div`
 
 export const Feature = styled(BackGround)`
   height: 65%;
-  
+
   @media (max-width: 1100px){
     display: none;
   }
@@ -50,12 +50,38 @@ export const Logo = styled.img`
   }
 `;
 
-export const Text = styled.div`
+export const Text = styled.p`
   color:white;
   font-size:22px;
   line-height: normal;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, .45);
-  margin: 0;
+  margin: 0 65px;
+
+  @media (max-width: 1000px){
+    margin: 0 30px;
+  }
+`;
+
+export const FeaturedText = styled.p`
+  color:white;
+  font-size:40px;
+  line-height: normal;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
+  margin: 120px 0 0 65px;
+
+  @media (max-width: 1000px){
+    margin: 0 30px;
+  }
+`;
+
+export const TextLink = styled.p`
+  color:white;
+  font-size:40px;
+  line-height: normal;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
+  margin: 120px 0 0 65px;
 
   @media (max-width: 1000px){
     margin: 0 30px;

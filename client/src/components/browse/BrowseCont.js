@@ -3,6 +3,8 @@ import ProfileCont from '../profile/ProfileCont'
 import {FirebaseCntx} from '../../context/firebase'
 import Loading from '../Loading/Loading.js'
 import Header from '../header/Header'
+import * as Routes from '../../routes/constants'
+import logoSvg from '../../logo.svg'
 
 export default function BrowseCont({slides}) {
   const [profile, setProfile] = useState({})
@@ -21,7 +23,13 @@ export default function BrowseCont({slides}) {
     : 
     <Loading.ReleaseBody />}
     <Header src='joker1'feature={true}>
-      <Header.Text>HELLO</Header.Text>
+      <Header.Frame>
+        <Header.Logo to={Routes.HOME} src={logoSvg} alt='Netflix'/>
+        <Header.TextLink>Series</Header.TextLink>
+        <Header.TextLink>Films</Header.TextLink>
+      </Header.Frame>
+      <Header.FeaturedText>Watch Joker Now</Header.FeaturedText>
+      <Header.Text>Hello</Header.Text>
     </Header>
   </>
 
