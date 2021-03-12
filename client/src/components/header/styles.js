@@ -75,17 +75,13 @@ export const FeaturedText = styled.p`
   }
 `;
 
-export const TextLink = styled.p`
+export const TextLink = styled(ReactLink)`
   color:white;
-  font-size:40px;
-  line-height: normal;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
-  margin: 120px 0 0 65px;
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: ${({active}) => active ? '700' : 'normal'}
+  cursor: pointer;
 
-  @media (max-width: 1000px){
-    margin: 0 30px;
-  }
 `;
 
 export const Btn = styled(ReactLink)`
