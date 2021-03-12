@@ -20,7 +20,9 @@ export default function BrowseCont({slides}) {
     <Loading src={user.photoURL} />
     : 
     <Loading.ReleaseBody />}
-    <Header src='joker1'>Hello</Header>
+    <Header src='joker1'feature={true}>
+      <Header.Text>HELLO</Header.Text>
+    </Header>
   </>
 
 

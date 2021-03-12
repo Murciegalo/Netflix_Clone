@@ -19,6 +19,7 @@ export const BackGround = styled.div`
     height: 520px;
   }
 `;
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -31,6 +32,14 @@ export const Container = styled.div`
   }
 `;
 
+export const Feature = styled(BackGround)`
+  height: 65%;
+  
+  @media (max-width: 1100px){
+    display: none;
+  }
+`;
+
 export const Logo = styled.img`
   height: 32px;
   width: 112px;
@@ -38,6 +47,18 @@ export const Logo = styled.img`
   @media (min-width: 1449px){
     height: 45px;
     width: 167px;
+  }
+`;
+
+export const Text = styled.div`
+  color:white;
+  font-size:22px;
+  line-height: normal;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .45);
+  margin: 0;
+
+  @media (max-width: 1000px){
+    margin: 0 30px;
   }
 `;
 
