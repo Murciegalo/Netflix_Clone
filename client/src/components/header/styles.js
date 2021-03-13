@@ -37,6 +37,11 @@ export const Container = styled.div`
   }
 `;
 
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const Feature = styled(BackGround)`
   height: 65%;
 `;

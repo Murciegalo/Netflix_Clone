@@ -1,6 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {BackGround, Container, Feature, Logo, Text, FeaturedText, TextLink, Btn} from './styles'
+import {
+  BackGround,
+  Container,
+  Feature,
+  Group,
+  Logo,
+  Text,
+  FeaturedText,
+  TextLink,
+  Btn
+} from './styles'
 
 export default function Header({bg=true, feature=false, children, ...restProps}) {
   const background = bg && !feature? <BackGround {...restProps}>
@@ -9,8 +19,12 @@ export default function Header({bg=true, feature=false, children, ...restProps})
   return background;
 }
 
-Header.Frame = function HeaderFrame({children, ...restProps}) {
+Header.Container = function HeaderContainer({children, ...restProps}) {
   return <Container {...restProps}>{children}</Container>
+}
+
+Header.Group = function HeaderGroup({children, ...restProps}) {
+  return <Group {...restProps}>{children}</Group>
 }
 
 Header.Logo = function HeaderLogo({to, ...restProps}) {

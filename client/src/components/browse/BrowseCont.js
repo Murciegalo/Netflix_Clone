@@ -23,11 +23,16 @@ export default function BrowseCont({slides}) {
     : 
     <Loading.ReleaseBody />}
     <Header src='joker1'feature={true}>
-      <Header.Frame>
-        <Header.Logo to={Routes.HOME} src={logoSvg} alt='Netflix'/>
-        <Header.TextLink>Series</Header.TextLink>
-        <Header.TextLink>Films</Header.TextLink>
-      </Header.Frame>
+      <Header.Container>
+        <Header.Group>
+          <Header.Logo to={Routes.HOME} src={logoSvg} alt='Netflix'/>
+          <Header.TextLink>Series</Header.TextLink>
+          <Header.TextLink>Films</Header.TextLink>
+        </Header.Group>
+        <Header.Group>
+
+        </Header.Group>
+      </Header.Container>
       <Header.FeaturedText>Watch Joker Now</Header.FeaturedText>
       <Header.Text>Hello</Header.Text>
     </Header>

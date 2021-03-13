@@ -7,9 +7,9 @@ import Profiles from './Profiles'
 export default function ProfileCont({user:{displayName, photoURL}, setProfile}) {
   return <>
     <Header bg={false}>
-      <Header.Frame>
+      <Header.Container>
         <Header.Logo to={Routes.HOME} src={logo} alt='Netflix' />
-      </Header.Frame>
+      </Header.Container>
     </Header>
 
     <Profiles>

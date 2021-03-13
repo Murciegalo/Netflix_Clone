@@ -6,10 +6,10 @@ import logoSvg from '../../logo.svg'
 export default function HeaderCont({children}) {
   return (
     <Header>
-      <Header.Frame>
+      <Header.Container>
         <Header.Logo to={Routes.HOME} alt='Netflix' src={logoSvg} />
         <Header.Btn to={Routes.SIGNIN}>Sign In</Header.Btn>
-      </Header.Frame>
+      </Header.Container>
       {children}
     </Header>
   )
