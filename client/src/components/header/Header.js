@@ -27,8 +27,8 @@ Header.FeaturedText = function HeaderFeaturedText({children, ...restProps}) {
   return <FeaturedText {...restProps}>{children}</FeaturedText>
 }
 
-Header.TextLink = function HeaderTextLink({children, ...restProps}) {
-  return <TextLink {...restProps}>{children}</TextLink>
+Header.TextLink = function HeaderTextLink({to, children, ...restProps}) {
+  return <TextLink to={to} {...restProps}>{children}</TextLink>
 }
 
 Header.Btn = function HeaderBtn({to, children, ...restProps}) {

@@ -15,7 +15,12 @@ export const BackGround = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
-   @media (max-width: 600px){
+  @media (max-width: 1100px){
+    display: flex;
+    ${({dontShowSmallViewport}) => dontShowSmallViewport && `background:none`}
+  }
+
+  @media (max-width: 600px){
     height: 520px;
   }
 `;
@@ -34,10 +39,6 @@ export const Container = styled.div`
 
 export const Feature = styled(BackGround)`
   height: 65%;
-
-  @media (max-width: 1100px){
-    display: none;
-  }
 `;
 
 export const Logo = styled.img`
@@ -79,9 +80,15 @@ export const TextLink = styled(ReactLink)`
   color:white;
   text-decoration: none;
   margin-right: 30px;
-  font-weight: ${({active}) => active ? '700' : 'normal'}
+  font-weight: ${({active}) => active === 'true' ? '700' : 'normal'}
   cursor: pointer;
 
+  &:hover {
+    font-weight:bold;
+  }
+  &:last-of-type {
+    margin-right:0;
+  }
 `;
 
 export const Btn = styled(ReactLink)`
