@@ -65,6 +65,21 @@ export const Picture = styled.button`
   cursor: pointer;
 `;
 
+export const TextLink = styled(ReactLink)`
+  color:white;
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: ${({active}) => active === 'true' ? '700' : 'normal'}
+  cursor: pointer;
+
+  &:hover {
+    font-weight:bold;
+  }
+  &:last-of-type {
+    margin-right:0;
+  }
+`;
+
 export const Dropdown = styled.div`
   display: none;
   background-color: black;
@@ -73,6 +88,32 @@ export const Dropdown = styled.div`
   width: 100px;
   top: 32px;
   right: 10px;
+
+  ${Group}:last-of-type ${TextLink}{
+    cursor: pointer;
+  }
+
+  ${Group}{
+    margin-bottom: 10px;
+
+    &:last-of-type: {
+      margin-bottom: 0;
+    }
+
+    ${TextLink}, ${Picture}{
+      cursor: default;
+    }
+  }
+
+  button{
+    margin-right: 10px;
+  }
+
+  p{
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 `;
 
 export const Profile = styled.div`
@@ -113,21 +154,6 @@ export const FeaturedText = styled.p`
 
   @media (max-width: 1000px){
     margin: 0 30px;
-  }
-`;
-
-export const TextLink = styled(ReactLink)`
-  color:white;
-  text-decoration: none;
-  margin-right: 30px;
-  font-weight: ${({active}) => active === 'true' ? '700' : 'normal'}
-  cursor: pointer;
-
-  &:hover {
-    font-weight:bold;
-  }
-  &:last-of-type {
-    margin-right:0;
   }
 `;
 
