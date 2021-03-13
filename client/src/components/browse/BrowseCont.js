@@ -11,7 +11,8 @@ export default function BrowseCont({slides}) {
   const [loading, setLoading] = useState(true)
   const {firebase} = useContext(FirebaseCntx)
   const user = firebase.auth().currentUser || {} 
-
+  // conditional rendering
+  
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
@@ -30,7 +31,15 @@ export default function BrowseCont({slides}) {
           <Header.TextLink>Films</Header.TextLink>
         </Header.Group>
         <Header.Group>
-
+          <Header.Profile>
+            <Header.Picture src={user.photoURL} />
+            <Header.Dropdown>
+              <Header.Group>
+                <Header.Picture src={user.photoURL} />
+                <Header.TextLink>{user.displayName}</Header.TextLink>
+              </Header.Group>
+            </Header.Dropdown>
+          </Header.Profile>
         </Header.Group>
       </Header.Container>
       <Header.FeaturedText>Watch Joker Now</Header.FeaturedText>
