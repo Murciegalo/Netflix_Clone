@@ -162,10 +162,13 @@ export const SearchInput = styled.input`
   background-color: #44444459;
   color: white;
   border: 1px solid white;
-  transition: with 0.5s;
+  transition: width .5s;
   height: 30px;
   font-size: 14px;
-  margin-left: ${({active}) => active ? '10px': '0'}
+  margin-left: ${({active}) => active ? '5px': '0'};
+  padding: ${({active}) => active ? '0 10px': '0'};
+  opacity: ${({active}) => active ? '1': '0'};
+  width: ${({active}) => active ? '200px': '0'};
 `;
 
 export const Text = styled.p`
