@@ -50,6 +50,24 @@ export const Text = styled.p`
   justify-content: space-between;
 `;
 
+export const Feature = styled.div`
+`;
+
+export const FeatureTitle= styled.(Title)`
+`;
+
+export const FeatureText= styled.p`
+`;
+
+export const FeatureClose= styled.button`
+`;
+
+export const Maturity= styled.p`
+`;
+
+export const Content= styled.p`
+`;
+
 export const Meta = styled.p`
   display: flex;
   justify-content: space-between;
@@ -61,6 +79,11 @@ export const Item = styled.p`
 `;
 
 export const Image = styled.p`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Entities = styled.p`
   display: flex;
   justify-content: space-between;
 `;
