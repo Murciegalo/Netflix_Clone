@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import {Container, Title, List, User, Picture, Name} from './styles'
 
 export default function Profiles({children, ...restProps}) {

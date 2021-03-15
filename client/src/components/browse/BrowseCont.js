@@ -7,11 +7,11 @@ import * as Routes from '../../routes/constants'
 import logoSvg from '../../logo.svg'
 
 export default function BrowseCont({slides}) {
+  const [search, setSearch] = useState('')
   const [profile, setProfile] = useState({})
   const [loading, setLoading] = useState(true)
   const {firebase} = useContext(FirebaseCntx)
   const user = firebase.auth().currentUser || {} 
-  // conditional rendering
   
   useEffect(() => {
     setTimeout(() => {
@@ -31,6 +31,7 @@ export default function BrowseCont({slides}) {
           <Header.TextLink>Films</Header.TextLink>
         </Header.Group>
         <Header.Group>
+          <Header.Search search={search} setSearch={setSearch}></Header.Search>
           <Header.Profile>
             <Header.Picture src={user.photoURL} />
             <Header.Dropdown>
