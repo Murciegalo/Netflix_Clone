@@ -15,6 +15,7 @@ import {
   Text,
   FeaturedText,
   TextLink,
+  PlayBtn,
   Btn
 } from './styles'
 
@@ -77,6 +78,9 @@ Header.TextLink = function HeaderTextLink({to, children, ...restProps}) {
   return <TextLink to={to} {...restProps}>{children}</TextLink>
 }
 
+Header.PlayBtn = function HeaderPlayBtn({children, ...restProps}) {
+  return <PlayBtn {...restProps}>{children}</PlayBtn>
+}
 Header.Btn = function HeaderBtn({to, children, ...restProps}) {
   return <Btn to={to} {...restProps}>{children}</Btn>
 }

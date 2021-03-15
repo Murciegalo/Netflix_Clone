@@ -52,6 +52,7 @@ export default function BrowseCont({slides}) {
       </Header.Container>
       <Header.FeaturedText>Watch Joker Now</Header.FeaturedText>
       <Header.Text>Hello</Header.Text>
+      <Header.PlayBtn>Play</Header.PlayBtn>
     </Header>
   </>
 
