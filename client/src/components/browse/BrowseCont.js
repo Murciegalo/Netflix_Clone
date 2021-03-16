@@ -1,15 +1,19 @@
 import React, {useContext, useState, useEffect} from 'react'
-import ProfileCont from '../profile/ProfileCont'
 import {FirebaseCntx} from '../../context/firebase'
+import ProfileCont from '../profile/ProfileCont'
 import Loading from '../Loading/Loading.js'
 import Header from '../header/Header'
+import Card from '../card/Card'
 import * as Routes from '../../routes/constants'
 import logoSvg from '../../logo.svg'
 
 export default function BrowseCont({slides}) {
+  const [category, setCategory] = useState('series')
   const [search, setSearch] = useState('')
   const [profile, setProfile] = useState({})
   const [loading, setLoading] = useState(true)
+  const [slideRows, setSlideRows] = useState([])
+
   const {firebase} = useContext(FirebaseCntx)
   const user = firebase.auth().currentUser || {} 
   
@@ -18,7 +22,13 @@ export default function BrowseCont({slides}) {
       setLoading(false)
     }, 5000)
   } // eslint-disable-next-line
-  ,[profile.displayName])
+  , [profile.displayName])
+
+  useEffect(() => {
+    setSlideRows(slides[category])  
+  }
+  , [slides, category])
+  
   const rendered = <>{loading ? 
     <Loading src={user.photoURL} />
     : 
@@ -27,8 +37,18 @@ export default function BrowseCont({slides}) {
       <Header.Container>
         <Header.Group>
           <Header.Logo to={Routes.HOME} src={logoSvg} alt='Netflix'/>
-          <Header.TextLink>Series</Header.TextLink>
-          <Header.TextLink>Films</Header.TextLink>
+          <Header.TextLink 
+            active={category === 'series' ? 'true' : 'false'}
+            onClick={() => setCategory('series')}
+          >
+            Series
+          </Header.TextLink>
+          <Header.TextLink
+            active={category === 'films' ? 'true' : 'false'}
+            onClick={() => setCategory('films')}
+          >
+            Films
+          </Header.TextLink>
         </Header.Group>
         <Header.Group>
           <Header.Search search={search} setSearch={setSearch}></Header.Search>
@@ -54,11 +74,16 @@ export default function BrowseCont({slides}) {
       <Header.Text>Hello</Header.Text>
       <Header.PlayBtn>Play</Header.PlayBtn>
     </Header>
+    <Card.Group>
+      {slideRows.map(el => <Card key={`${category}-${el.title.toLowerCase()}`} >
+        <Card.Title>{el.title}</Card.Title>
+        {/* <Card.Entities>{el}</Card.Entities> */}
+      </Card>)}
+    </Card.Group>
   </>
 
 
   return profile.displayName ? rendered
   : 
-  <ProfileCont user={user} setProfile={setProfile} />
-  ;
+  <ProfileCont user={user} setProfile={setProfile} />;
 }

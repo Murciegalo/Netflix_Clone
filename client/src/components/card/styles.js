@@ -32,7 +32,9 @@ export const Container = styled.div`
 
 export const Group = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  padding-top: 530px;
 `;
 
 export const Title = styled.p`
@@ -53,7 +55,7 @@ export const Text = styled.p`
 export const Feature = styled.div`
 `;
 
-export const FeatureTitle= styled.(Title)`
+export const FeatureTitle= styled(Title)`
 `;
 
 export const FeatureText= styled.p`
