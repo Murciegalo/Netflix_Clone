@@ -4,6 +4,7 @@ import ProfileCont from '../profile/ProfileCont'
 import Loading from '../Loading/Loading.js'
 import Header from '../header/Header'
 import Card from '../card/Card'
+import Player from '../player/Player'
 import * as Routes from '../../routes/constants'
 import logoSvg from '../../logo.svg'
 
@@ -80,8 +81,19 @@ export default function BrowseCont({slides}) {
         <Card.Entities>{
           el.data.map(el => <Card.Item key={el.docId} item={el}>
             <Card.Image src={`/images/${category}/${el.genre}/${el.slug}/small.jpg`} />
-          </Card.Item>)
-        }</Card.Entities>
+            <Card.Meta>
+              <Card.Subtitle>{el.title}</Card.Subtitle>
+              <Card.Text>{el.description}</Card.Text>
+            </Card.Meta>
+          </Card.Item>
+          )}
+        </Card.Entities>
+        {/* <Card.Feature category={category}>
+          <Player>
+            <Player.Btn />
+            <Player.Video src="/videos/bunny.mp4" />
+          </Player>
+        </Card.Feature> */}
       </Card>)}
     </Card.Group>
   </>
