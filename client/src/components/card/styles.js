@@ -27,6 +27,7 @@ export const BackGround = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
@@ -37,7 +38,7 @@ export const Group = styled.div`
   padding-top: 530px;
 `;
 
-export const Title = styled.p`
+export const Title = styled.h2`
   display: flex;
   justify-content: space-between;
 `;
@@ -75,17 +76,17 @@ export const Meta = styled.p`
   justify-content: space-between;
 `;
 
-export const Item = styled.p`
+export const Item = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const Image = styled.p`
+export const Image = styled.img`
   display: flex;
   justify-content: space-between;
 `;
 
-export const Entities = styled.p`
+export const Entities = styled.div`
   display: flex;
   justify-content: space-between;
 `;

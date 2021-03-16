@@ -77,7 +77,11 @@ export default function BrowseCont({slides}) {
     <Card.Group>
       {slideRows.map(el => <Card key={`${category}-${el.title.toLowerCase()}`} >
         <Card.Title>{el.title}</Card.Title>
-        {/* <Card.Entities>{el}</Card.Entities> */}
+        <Card.Entities>{
+          el.data.map(el => <Card.Item key={el.docId} item={el}>
+            <Card.Image src={`/images/${category}/${el.genre}/${el.slug}/small.jpg`} />
+          </Card.Item>)
+        }</Card.Entities>
       </Card>)}
     </Card.Group>
   </>
