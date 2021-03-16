@@ -86,6 +86,4 @@ export const Image = styled.img`
 `;
 
 export const Entities = styled.div`
-  display: flex;
-  justify-content: space-between;
 `;
