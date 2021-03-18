@@ -70,9 +70,8 @@ export const Maturity= styled.p`
 export const Content= styled.p`
 `;
 
-export const Meta = styled.p`
-  display: flex;
-  justify-content: space-between;
+export const Meta = styled.div`
+  display: none;
 `;
 
 export const Item = styled.div`
@@ -86,4 +85,6 @@ export const Image = styled.img`
 `;
 
 export const Entities = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
