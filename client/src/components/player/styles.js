@@ -52,31 +52,19 @@ export const Inner = styled.div`
 export const Close = styled.button`
   position: absolute;
   right: 15px;
-  top: 15px;
-  width: 22px;
-  height: 22px;
-  opacity: 0.3;
-  background-color: transparent;
+  top: 5px;
+  width: 40px;
+  height: 42px;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 0;
+  border-radius: 25px;
   cursor: pointer;
-  
+  transition: transform 0.3;
+  font-size: 30px;
+  color: #fff;
+
   &:hover {
     opacity: 1;
-  }
-  &:before,
-  &:after {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    content: ' ';
-    height: 22px;
-    width: 22px;
-    background-color: #333;
-  }
-  &:before {
-    transform: rotate(45deg);
-  }
-  &:after {
-    transform: rorate(-45deg);
+    transform: rotate(90deg);
   }
 `;

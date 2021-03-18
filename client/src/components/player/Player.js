@@ -30,7 +30,7 @@ Player.Video = function PlayerVideo({src, ...restProps}) {
         <video id='netflix-player' controls>
           <source src={src} type='video/mp4' />
         </video>
-        <Close />
+        <Close>X</Close>
       </Inner>
     </Overlay>,
     document.body
