@@ -2,6 +2,7 @@ import React, {useState, useContext, createContext} from 'react'
 import {
   Container,
   Group,
+  GroupSmall,
   Title,
   Subtitle,
   Text,
@@ -35,6 +36,10 @@ export default function Card({children, ...restProps}) {
 
 Card.Group = function CardGroup({children, ...restProps}) {
   return <Group {...restProps}>{children}</Group>
+}
+
+Card.GroupSmall = function CardGroupSmall({children, ...restProps}) {
+  return <GroupSmall {...restProps}>{children}</GroupSmall>
 }
 
 Card.Title = function CardTitle({children, ...restProps}) {
@@ -89,17 +94,16 @@ Card.Feature = function CardFeature({children, category, ...restProps}) {
         <FeatureClose onClick={() => setShowFeature(false)}>
           <img src="images/icons/close.png" alt="Close" />
         </FeatureClose>
+        <GroupSmall margin={'30px'}>
+          <Maturity rating={itemFeature.maturity}>{
+            itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
+          </Maturity>
+          <FeatureText fontWeight="bold">
+            {itemFeature.genre.charAt(0).toUpperCase() +
+             itemFeature.genre.slice(1)}
+          </FeatureText>
+        </GroupSmall>
       </Content>
-      <Group margin="30px 0" flexDirection="row" alignItems="center">
-        <Maturity rating={itemFeature.maturity}>{
-          itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity
-        }
-        </Maturity>
-        <FeatureText fontWeight="bold">
-          {itemFeature.genre.charAt(0).toUpperCase() +
-           itemFeature.genre.slice(1)}
-        </FeatureText>
-      </Group>
     </Feature>
   ) : null
 }
