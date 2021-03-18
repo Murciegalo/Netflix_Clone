@@ -70,7 +70,6 @@ export const Subtitle = styled.p`
   margin-top: 0;
   margin-bottom: 0;
   user-select: none;
-  display: none;
 `;
 
 export const Text = styled.p`
@@ -79,7 +78,6 @@ export const Text = styled.p`
   color: #fff;
   margin-bottom: 0;
   user-select: none;
-  display: none;
   line-height: normal;
 `;
 
@@ -174,6 +172,9 @@ export const Item = styled.div`
   &:hover{
     transform: scale(1.3);
     z-index: 99;
+  }
+  &: hover ${Meta}{
+    display: block;
   }
 
   @media (min-width: 1200px){
