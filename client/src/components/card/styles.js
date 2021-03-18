@@ -67,8 +67,7 @@ export const Subtitle = styled.p`
   font-size: 12px;
   color: #fff;
   font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 10px 20px;
   user-select: none;
 `;
 
@@ -76,7 +75,7 @@ export const Text = styled.p`
   margin-top: 5px;
   font-size: 10px;
   color: #fff;
-  margin-bottom: 0;
+  margin: 0 20px;
   user-select: none;
   line-height: normal;
 `;
@@ -157,8 +156,8 @@ export const Meta = styled.div`
   display: none;
   position: absolute;
   bottom: 0;
-  padding: 10px;
-  background-color: #0000000f;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 `;
 
 export const Item = styled.div`

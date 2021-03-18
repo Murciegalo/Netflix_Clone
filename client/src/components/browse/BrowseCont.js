@@ -1,12 +1,13 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {FirebaseCntx} from '../../context/firebase'
+import * as Routes from '../../routes/constants'
+import logoSvg from '../../logo.svg'
 import ProfileCont from '../profile/ProfileCont'
 import Loading from '../Loading/Loading.js'
 import Header from '../header/Header'
 import Card from '../card/Card'
 import Player from '../player/Player'
-import * as Routes from '../../routes/constants'
-import logoSvg from '../../logo.svg'
+import FooterCont from '../footer/FooterCont'
 
 export default function BrowseCont({slides}) {
   const [category, setCategory] = useState('series')
@@ -93,6 +94,7 @@ export default function BrowseCont({slides}) {
         </Card.Feature> 
       </Card>)}
     </Card.Group>
+    <FooterCont />
   </>
 
 
