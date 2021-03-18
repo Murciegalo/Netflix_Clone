@@ -90,9 +90,13 @@ export default function BrowseCont({slides}) {
           )}
         </Card.Entities>
         <Card.Feature category={category}>
-          <p>Hello</p>
+          <Player>
+            <Player.Btn />
+            <Player.Video src='/videos/bunny.mp4' />
+          </Player>  
         </Card.Feature> 
-      </Card>)}
+        </Card>
+      )}
     </Card.Group>
     <FooterCont />
   </>

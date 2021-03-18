@@ -17,6 +17,7 @@ import {
   Item,
   Image
 } from './styles'
+import Player from '../player/Player'
 
 export const FeatureContext = createContext()
 
@@ -103,6 +104,10 @@ Card.Feature = function CardFeature({children, category, ...restProps}) {
              itemFeature.genre.slice(1)}
           </FeatureText>
         </GroupSmall>
+        <Player>
+            <Player.Btn />
+            <Player.Video src='/videos/bunny.mp4' />
+        </Player>
       </Content>
     </Feature>
   ) : null

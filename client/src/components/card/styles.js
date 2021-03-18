@@ -50,7 +50,7 @@ export const Group = styled.div`
   > ${Container}:first-of-type {
     @media (min-width: 1100px){
       margin-top: -150px;
-      z-index: 5;
+      z-index: 0;
     }
   }
 `;
