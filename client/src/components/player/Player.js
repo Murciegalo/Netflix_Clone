@@ -25,6 +25,7 @@ Player.Video = function PlayerVideo({src, ...restProps}) {
     <Overlay
       {...restProps} 
       onClick={() => setShowPlayer(false)}
+      data-testid='player'
     >
       <Inner>
         <video id='netflix-player' controls>
