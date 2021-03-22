@@ -1,5 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {FirebaseCntx} from '../../context/firebase'
+import Fuse from 'fuse.js'
 import * as Routes from '../../routes/constants'
 import logoSvg from '../../logo.svg'
 import ProfileCont from '../profile/ProfileCont'
@@ -30,6 +31,20 @@ export default function BrowseCont({slides}) {
     setSlideRows(slides[category])  
   }
   , [slides, category])
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.description', 'data.title', 'data.genre']
+    })
+    const results = fuse.search(search).map(({item}) => item)
+
+    if(slideRows.length > 0 && search.length > 3 && results.length > 0){
+      setSlideRows(results)
+    }
+    else{
+      setSlideRows(slides[category])
+    }
+  }, [search])
   
   const rendered = <>{loading ? 
     <Loading src={user.photoURL} />
@@ -53,7 +68,7 @@ export default function BrowseCont({slides}) {
           </Header.TextLink>
         </Header.Group>
         <Header.Group>
-          <Header.Search search={search} setSearch={setSearch}></Header.Search>
+          <Header.Search search={search} setSearch={setSearch} />
           <Header.Profile>
             <Header.Picture src={user.photoURL} />
             <Header.Dropdown>
